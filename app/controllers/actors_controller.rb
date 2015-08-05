@@ -18,7 +18,7 @@ class ActorsController < ApplicationController
     @actor.image_url=params["image_url"]
     @actor.save
 
-    redirect_to("http://localhost:3000/movies")
+    render("show")
   end
 
   def edit_form
@@ -35,7 +35,7 @@ class ActorsController < ApplicationController
     @actor.save
 
 
-    redirect_to("http://localhost:3000/movies/#{p.id}")
+    render("show")
   end
 
   def destroy

@@ -19,7 +19,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    redirect_to("http://localhost:3000/directors")
+    render("show")
   end
 
   def edit_form
@@ -37,14 +37,13 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-
-    redirect_to("http://localhost:3000/directors/#{p.id}")
+    render("show")
   end
 
   def destroy
     @director = Director.find(params["id"])
 
     @director.destroy
-    redirect_to("http://localhost:3000/directors")
+
   end
 end
